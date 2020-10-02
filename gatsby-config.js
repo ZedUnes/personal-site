@@ -3,7 +3,8 @@ module.exports = {
     title: "Zied Younes (ZedUnes) Personal Website",
     author: {
       name: "Zied Younes",
-      summary: "Mechatronics Engineer and Web Developer that lives and works in Sousse Tunisia.",
+      summary:
+        "Mechatronics Engineer and Web Developer that lives and works in Sousse Tunisia.",
     },
     description: "My personal website, blog and portfolio",
     siteUrl: "https://www.zedunes.com",
@@ -74,7 +75,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/manifest.ico`,
+        icon: `content/assets/manifest.jpg`,
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -82,4 +83,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};
