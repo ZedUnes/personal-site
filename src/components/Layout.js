@@ -20,6 +20,10 @@ const Layout = ({ title, description, children }) => {
             description
             social {
               twitter
+              facebook
+              github
+              medium
+              linkedin
             }
           }
         }
@@ -41,9 +45,9 @@ const Layout = ({ title, description, children }) => {
         metaDescription={description || siteMetadata.description}
         title={title}
       />
-      <Header avatar={avatar} />
+      <Header avatar={avatar}/>
       <main>{children}</main>
-      <Footer />
+      <Footer social={siteMetadata.social} />
     </div>
   );
 };

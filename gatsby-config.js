@@ -9,9 +9,11 @@ module.exports = {
     description: "My personal website, blog and portfolio",
     siteUrl: "https://www.zedunes.com",
     social: {
-      twitter: "@ZedUnes",
+      twitter: "zedunes",
       facebook: "zedunes",
       linkedin: "zedunes",
+      medium: "zedunes",
+      github: "zedunes",
     },
   },
   plugins: [
@@ -29,6 +31,7 @@ module.exports = {
         name: "assets",
       },
     },
+    "gatsby-plugin-sass",
     {
       resolve: "gatsby-plugin-typography",
       options: {
