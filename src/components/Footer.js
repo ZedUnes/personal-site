@@ -26,7 +26,7 @@ const Footer = ({ social }) => (
     </div>
     <div className={styles.copyright}>
       <p>
-        © 2020 Zied Younes. Powered by <strong>Gatsby</strong>
+        © 2020 Zied Younes.
       </p>
     </div>
   </footer>

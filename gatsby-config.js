@@ -2,9 +2,10 @@ module.exports = {
   siteMetadata: {
     title: "Zied Younes (ZedUnes) Personal Website",
     author: {
+      shortName: "Zied",
       name: "Zied Younes",
       summary:
-        "Mechatronics Engineer and Web Developer that lives and works in Sousse Tunisia.",
+        "Full-Stack Web Developer and Mechatronics Engineer based in Sousse, Tunisia.",
     },
     description: "My personal website, blog and portfolio",
     siteUrl: "https://www.zedunes.com",

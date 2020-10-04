@@ -5,6 +5,8 @@ import Header from "./Header";
 import Footer from "./Footer";
 import SEO from "./Seo";
 
+import styles from "./layout.module.scss";
+
 const Layout = ({ title, description, children }) => {
   const {
     site: { siteMetadata },
@@ -39,7 +41,7 @@ const Layout = ({ title, description, children }) => {
   );
 
   return (
-    <div className="global-wrapper">
+    <div className={styles.container}>
       <SEO
         defaultTitle={siteMetadata.title}
         metaDescription={description || siteMetadata.description}

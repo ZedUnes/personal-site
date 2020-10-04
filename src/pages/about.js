@@ -1,51 +1,60 @@
 import React from "react";
 import { graphql } from "gatsby";
 
+import Image from "../components/Image";
 import Layout from "../components/Layout";
 
-const AboutPage = () => (
+const AboutPage = ({
+  data: {
+    site: {
+      siteMetadata: {
+        author: { name },
+      },
+    },
+    avatar: {
+      childImageSharp: { fixed: avatar },
+    },
+  },
+}) => (
   <Layout title="About">
-    Mechatronics Engineer and Senior Web Developer.
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Image
+        src={avatar}
+        alt={name || ``}
+        style={{ width: "100px", height: "100px", borderRadius: `50%` }}
+      />
+      <p>
+        <strong>{name}</strong>,
+      </p>
+    </div>
   </Layout>
 );
 
 export default AboutPage;
 
-// import React from "react";
-// import { useStaticQuery, graphql } from "gatsby";
-// import Image from "gatsby-image";
-
-// const Bio = () => {
-//   const {
-//     site: { siteMetadata: { author: { name, summary } } },
-//     avatar: { childImageSharp: { fixed: avatar } },
-//   } = useStaticQuery(graphql`
-//     query BioQuery {
-//       avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
-//         childImageSharp {
-//           fixed(width: 50, height: 50, quality: 95) {
-//             ...GatsbyImageSharpFixed
-//           }
-//         }
-//       }
-//       site { siteMetadata { author { name summary } } }
-//     }
-//   `);
-
-//   return (
-//     <div className="bio">
-//       <Image
-//         fixed={avatar}
-//         alt={name || ``}
-//         className="bio-avatar"
-//         imgStyle={{ borderRadius: `50%` }}
-//       />
-//       <p>
-//         <strong>{name}</strong>,
-//       </p>
-//     </div>
-//   );
-// };
-
-// export default Bio;
-
+export const pageQuery = graphql`
+  query {
+    avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+      childImageSharp {
+        fixed(width: 50, height: 50, quality: 95) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    site {
+      siteMetadata {
+        author {
+          name
+          summary
+        }
+      }
+    }
+  }
+`;

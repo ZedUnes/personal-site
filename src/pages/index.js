@@ -3,11 +3,24 @@ import { graphql } from "gatsby";
 
 import Layout from "../components/Layout";
 
-const HomePage = () => (
+const HomePage = ({ data: { site: { siteMetadata: { author } } } }) => (
   <Layout title="Home Page">
-    <h1>Home Page</h1>
-    <p>This is my home page</p>
+    <h1>Hi, I'm {author.shortName}.</h1>
+    <p>{author.summary}</p>
   </Layout>
 );
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        author {
+          shortName
+          summary
+        }
+      }
+    }
+  }
+`;
 
 export default HomePage;
