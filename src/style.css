@@ -131,9 +131,6 @@ a:focus {
   text-decoration: none;
 }
 
-.global-wrapper {
-}
-
 header {
   margin-bottom: var(--spacing-12);
 }
