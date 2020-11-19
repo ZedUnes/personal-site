@@ -8,12 +8,7 @@ import SEO from "./Seo";
 import styles from "./layout.module.scss";
 
 const Layout = ({ title, description, children }) => {
-  const {
-    site: { siteMetadata },
-    avatar: {
-      childImageSharp: { fixed: avatar },
-    },
-  } = useStaticQuery(
+  const { site: { siteMetadata } } = useStaticQuery(
     graphql`
       query BioQuery {
         site {
@@ -29,13 +24,6 @@ const Layout = ({ title, description, children }) => {
             }
           }
         }
-        avatar: file(absolutePath: { regex: "/logo.png/" }) {
-          childImageSharp {
-            fixed(width: 100, height: 100, quality: 100) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
       }
     `
   );
@@ -47,7 +35,7 @@ const Layout = ({ title, description, children }) => {
         metaDescription={description || siteMetadata.description}
         title={title}
       />
-      <Header avatar={avatar}/>
+      <Header />
       <main>{children}</main>
       <Footer social={siteMetadata.social} />
     </div>

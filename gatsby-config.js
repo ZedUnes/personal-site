@@ -4,8 +4,12 @@ module.exports = {
     author: {
       shortName: "Zied",
       name: "Zied Younes",
-      summary:
+      label:
         "Full-Stack Web Developer and Mechatronics Engineer based in Sousse, Tunisia.",
+      summary:
+        "Software Developer with four years of experience in web and mobile development in the field of Transportation and Logistics. \
+	I usually get involved in different stages of app development: design, coding, code review, delivery, debugging, refactoring, maintenance, and assisting business in communication with clients. \
+	I like taking on challenges, and learning new things.",
     },
     description: "My personal website, blog and portfolio",
     siteUrl: "https://www.zedunes.com",

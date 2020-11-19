@@ -8,7 +8,7 @@ const AboutPage = ({
   data: {
     site: {
       siteMetadata: {
-        author: { name },
+        author: { name, summary },
       },
     },
     avatar: {
@@ -25,14 +25,18 @@ const AboutPage = ({
         justifyContent: "center",
       }}
     >
-      <Image
-        src={avatar}
-        alt={name || ``}
-        style={{ width: "100px", height: "100px", borderRadius: `50%` }}
-      />
-      <p>
-        <strong>{name}</strong>,
-      </p>
+      <div className="bio">
+        <div className="bio-image-container">
+          <Image
+            src={avatar}
+            alt={name}
+            style={{ borderRadius: "50%" }}
+          />
+        </div>
+        {summary.split("\t").map(s => (
+          <p>{s}</p>
+        ))}
+      </div>
     </div>
   </Layout>
 );
@@ -43,7 +47,7 @@ export const pageQuery = graphql`
   query {
     avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
       childImageSharp {
-        fixed(width: 50, height: 50, quality: 95) {
+        fixed(width: 200, height: 200, quality: 100) {
           ...GatsbyImageSharpFixed
         }
       }
